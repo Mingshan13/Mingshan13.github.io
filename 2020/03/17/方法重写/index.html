@@ -20,17 +20,20 @@
     var CONFIG = {"hostname":"github.com","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="我要看这样破铜烂铁的自己可以走到哪里">
-<meta property="og:type" content="website">
-<meta property="og:title" content="光会找到他">
-<meta property="og:url" content="https://github.com/Mingshan13/archives/index.html">
+  <meta name="description" content="方法重写：子类中出现了和父类方法中方法声明一模一样的方法。一模一样包括方法名和参数列表以及返回值类型 方法名相同时，使用的是子类自己的方法 为什么需要方法重写： 子类需要父类的功能，而子类又需要自己特有的内容时，需要重写父类里的方法 在子类的方法重写里，用super（。。。）调用父类 123456789101112class Phone&amp;#123;    public void call(Stri">
+<meta property="og:type" content="article">
+<meta property="og:title" content="方法重写">
+<meta property="og:url" content="https://github.com/Mingshan13/2020/03/17/%E6%96%B9%E6%B3%95%E9%87%8D%E5%86%99/index.html">
 <meta property="og:site_name" content="光会找到他">
-<meta property="og:description" content="我要看这样破铜烂铁的自己可以走到哪里">
+<meta property="og:description" content="方法重写：子类中出现了和父类方法中方法声明一模一样的方法。一模一样包括方法名和参数列表以及返回值类型 方法名相同时，使用的是子类自己的方法 为什么需要方法重写： 子类需要父类的功能，而子类又需要自己特有的内容时，需要重写父类里的方法 在子类的方法重写里，用super（。。。）调用父类 123456789101112class Phone&amp;#123;    public void call(Stri">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-17T06:40:48.000Z">
+<meta property="article:modified_time" content="2020-03-18T07:37:55.727Z">
 <meta property="article:author" content="Ming Shan">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://github.com/Mingshan13/archives/">
+<link rel="canonical" href="https://github.com/Mingshan13/2020/03/17/%E6%96%B9%E6%B3%95%E9%87%8D%E5%86%99/">
 
 
 <script id="page-configurations">
@@ -38,11 +41,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false
+    isPost: true
   };
 </script>
 
-  <title>归档 | 光会找到他</title>
+  <title>方法重写 | 光会找到他</title>
   
 
 
@@ -149,232 +152,119 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 16 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/Mingshan13/2020/03/17/%E6%96%B9%E6%B3%95%E9%87%8D%E5%86%99/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Digimon.Adventure.full.1752631.jpg">
+      <meta itemprop="name" content="Ming Shan">
+      <meta itemprop="description" content="我要看这样破铜烂铁的自己可以走到哪里">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="光会找到他">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          方法重写
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-17 14:40:48" itemprop="dateCreated datePublished" datetime="2020-03-17T14:40:48+08:00">2020-03-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-03-18 15:37:55" itemprop="dateModified" datetime="2020-03-18T15:37:55+08:00">2020-03-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index">
+                    <span itemprop="name">入门学习</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2020</h1>
-    </div>
+        <p>方法重写：子类中出现了和父类方法中方法声明一模一样的方法。一模一样包括方法名和参数列表以及返回值类型</p>
+<p>方法名相同时，使用的是子类自己的方法</p>
+<p>为什么需要方法重写：</p>
+<p>子类需要父类的功能，而子类又需要自己特有的内容时，需要重写父类里的方法</p>
+<p>在子类的方法重写里，用super（。。。）调用父类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Phone</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">        System.out,println(<span class="string">"call to"</span>+name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Newphone</span> <span class="title">extrnds</span> <span class="title">Phone</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">        <span class="comment">//System.out.println("call to"+name);</span></span><br><span class="line">        <span class="keyword">super</span>.call(name);</span><br><span class="line">        System.out.println(<span class="string">"new function"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-20T13:24:58+08:00"
-              content="2020-03-20">
-          03-20
-        </time>
-      </div>
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/03/20/%E6%8E%A5%E5%8F%A3/" itemprop="url">
-            <span itemprop="name">接口</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-20T10:32:51+08:00"
-              content="2020-03-20">
-          03-20
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/03/20/%E6%8A%BD%E8%B1%A1%E7%B1%BB/" itemprop="url">
-            <span itemprop="name">抽象类</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-18T16:16:52+08:00"
-              content="2020-03-18">
-          03-18
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/03/18/%E5%A4%9A%E6%80%81/" itemprop="url">
-            <span itemprop="name">多态</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-17T14:40:48+08:00"
-              content="2020-03-17">
-          03-17
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/03/17/%E6%96%B9%E6%B3%95%E9%87%8D%E5%86%99/" itemprop="url">
-            <span itemprop="name">方法重写</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-17T14:40:20+08:00"
-              content="2020-03-17">
-          03-17
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/03/17/%E7%BB%A7%E6%89%BF%E4%B8%AD%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E7%9A%84%E5%85%B3%E7%B3%BB/" itemprop="url">
-            <span itemprop="name">继承中构造方法的关系</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-17T12:59:10+08:00"
-              content="2020-03-17">
-          03-17
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/03/17/this%E5%85%B3%E9%94%AE%E5%AD%97%E3%80%81super%E5%85%B3%E9%94%AE%E5%AD%97/" itemprop="url">
-            <span itemprop="name">this关键字、super关键字</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-16T22:47:28+08:00"
-              content="2020-03-16">
-          03-16
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/03/16/%E7%BB%A7%E6%89%BF%E4%B8%AD%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E7%9A%84%E5%85%B3%E7%B3%BB/" itemprop="url">
-            <span itemprop="name">继承中成员变量的关系</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-15T18:59:28+08:00"
-              content="2020-03-15">
-          03-15
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/03/15/main%E6%96%B9%E6%B3%95%E7%9A%84%E6%A0%BC%E5%BC%8F%E8%A7%A3%E9%87%8A/" itemprop="url">
-            <span itemprop="name">main方法的格式解释</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-15T16:25:30+08:00"
-              content="2020-03-15">
-          03-15
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/03/15/%E8%BE%93%E5%85%A5%E6%95%B0%E6%8C%89%E5%8E%9F%E6%9C%89%E6%8E%92%E5%BA%8F%E6%96%B9%E6%B3%95%E6%8E%92%E5%BA%8F/" itemprop="url">
-            <span itemprop="name">输入数按原有排序方法排序</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-15T16:15:28+08:00"
-              content="2020-03-15">
-          03-15
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/03/15/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3/" itemprop="url">
-            <span itemprop="name">hexo博客搭建问题与解决</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
+<hr>
+<h3 id="方法重写的注意事项"><a href="#方法重写的注意事项" class="headerlink" title="方法重写的注意事项"></a>方法重写的注意事项</h3><ul>
+<li><p>父类中的私有方法不能重写，子类根本就不能继承父类的私有，更别说重写了</p>
+</li>
+<li><p><strong>子类重写父类方法时，访问权限不能更低</strong></p>
+<p>父类是public，子类也得是public。子类的权限可以比父类高，一样，但是不能低</p>
+</li>
+<li><p>父类静态方法，子类也必须静态方法重写</p>
+</li>
+</ul>
 
     </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Java/" rel="tag"># Java</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/03/17/%E7%BB%A7%E6%89%BF%E4%B8%AD%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E7%9A%84%E5%85%B3%E7%B3%BB/" rel="prev" title="继承中构造方法的关系">
+      <i class="fa fa-chevron-left"></i> 继承中构造方法的关系
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/03/18/%E5%A4%9A%E6%80%81/" rel="next" title="多态">
+      多态 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
   </div>
-  
-  
-  
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
-
 
 
           </div>
@@ -425,6 +315,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法重写的注意事项"><span class="nav-number">1.</span> <span class="nav-text">方法重写的注意事项</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

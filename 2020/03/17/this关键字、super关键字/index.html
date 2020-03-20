@@ -20,17 +20,20 @@
     var CONFIG = {"hostname":"github.com","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="我要看这样破铜烂铁的自己可以走到哪里">
-<meta property="og:type" content="website">
-<meta property="og:title" content="光会找到他">
-<meta property="og:url" content="https://github.com/Mingshan13/archives/index.html">
+  <meta name="description" content="一、this关键字 this代表所在类的对象引用，它就是当前类的对象名，就代表当前对象 因为在类里面不能用class.的方式调用成员变量，所以引用this来调用类里面的成员变量  方法被哪个对象调用，this就代表哪个对象  this应用场景：  解决局部变量隐藏成员变量  12345678910class student&amp;#123;    private String name;    priv">
+<meta property="og:type" content="article">
+<meta property="og:title" content="this关键字、super关键字">
+<meta property="og:url" content="https://github.com/Mingshan13/2020/03/17/this%E5%85%B3%E9%94%AE%E5%AD%97%E3%80%81super%E5%85%B3%E9%94%AE%E5%AD%97/index.html">
 <meta property="og:site_name" content="光会找到他">
-<meta property="og:description" content="我要看这样破铜烂铁的自己可以走到哪里">
+<meta property="og:description" content="一、this关键字 this代表所在类的对象引用，它就是当前类的对象名，就代表当前对象 因为在类里面不能用class.的方式调用成员变量，所以引用this来调用类里面的成员变量  方法被哪个对象调用，this就代表哪个对象  this应用场景：  解决局部变量隐藏成员变量  12345678910class student&amp;#123;    private String name;    priv">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-17T04:59:10.000Z">
+<meta property="article:modified_time" content="2020-03-17T06:39:44.383Z">
 <meta property="article:author" content="Ming Shan">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://github.com/Mingshan13/archives/">
+<link rel="canonical" href="https://github.com/Mingshan13/2020/03/17/this%E5%85%B3%E9%94%AE%E5%AD%97%E3%80%81super%E5%85%B3%E9%94%AE%E5%AD%97/">
 
 
 <script id="page-configurations">
@@ -38,11 +41,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false
+    isPost: true
   };
 </script>
 
-  <title>归档 | 光会找到他</title>
+  <title>this关键字、super关键字 | 光会找到他</title>
   
 
 
@@ -149,232 +152,132 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 16 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/Mingshan13/2020/03/17/this%E5%85%B3%E9%94%AE%E5%AD%97%E3%80%81super%E5%85%B3%E9%94%AE%E5%AD%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Digimon.Adventure.full.1752631.jpg">
+      <meta itemprop="name" content="Ming Shan">
+      <meta itemprop="description" content="我要看这样破铜烂铁的自己可以走到哪里">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="光会找到他">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          this关键字、super关键字
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-03-17 12:59:10 / 修改时间：14:39:44" itemprop="dateCreated datePublished" datetime="2020-03-17T12:59:10+08:00">2020-03-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index">
+                    <span itemprop="name">入门学习</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2020</h1>
-    </div>
+        <h3 id="一、this关键字"><a href="#一、this关键字" class="headerlink" title="一、this关键字"></a>一、this关键字</h3><ul>
+<li><p>this代表所在类的对象引用，它就是当前类的对象名，就代表当前对象</p>
+<p>因为在类里面不能用class.的方式调用成员变量，所以引用this来调用类里面的成员变量</p>
+</li>
+<li><p>方法被哪个对象调用，this就代表哪个对象</p>
+</li>
+<li><p>this应用场景：</p>
+<ul>
+<li>解决局部变量隐藏成员变量</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">student</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">(name)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">setName</span><span class="params">(name)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name=name;<span class="comment">//看这里</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-20T13:24:58+08:00"
-              content="2020-03-20">
-          03-20
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/03/20/%E6%8E%A5%E5%8F%A3/" itemprop="url">
-            <span itemprop="name">接口</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-20T10:32:51+08:00"
-              content="2020-03-20">
-          03-20
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/03/20/%E6%8A%BD%E8%B1%A1%E7%B1%BB/" itemprop="url">
-            <span itemprop="name">抽象类</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-18T16:16:52+08:00"
-              content="2020-03-18">
-          03-18
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/03/18/%E5%A4%9A%E6%80%81/" itemprop="url">
-            <span itemprop="name">多态</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-17T14:40:48+08:00"
-              content="2020-03-17">
-          03-17
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/03/17/%E6%96%B9%E6%B3%95%E9%87%8D%E5%86%99/" itemprop="url">
-            <span itemprop="name">方法重写</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-17T14:40:20+08:00"
-              content="2020-03-17">
-          03-17
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/03/17/%E7%BB%A7%E6%89%BF%E4%B8%AD%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E7%9A%84%E5%85%B3%E7%B3%BB/" itemprop="url">
-            <span itemprop="name">继承中构造方法的关系</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-17T12:59:10+08:00"
-              content="2020-03-17">
-          03-17
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/03/17/this%E5%85%B3%E9%94%AE%E5%AD%97%E3%80%81super%E5%85%B3%E9%94%AE%E5%AD%97/" itemprop="url">
-            <span itemprop="name">this关键字、super关键字</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-16T22:47:28+08:00"
-              content="2020-03-16">
-          03-16
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/03/16/%E7%BB%A7%E6%89%BF%E4%B8%AD%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E7%9A%84%E5%85%B3%E7%B3%BB/" itemprop="url">
-            <span itemprop="name">继承中成员变量的关系</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-15T18:59:28+08:00"
-              content="2020-03-15">
-          03-15
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/03/15/main%E6%96%B9%E6%B3%95%E7%9A%84%E6%A0%BC%E5%BC%8F%E8%A7%A3%E9%87%8A/" itemprop="url">
-            <span itemprop="name">main方法的格式解释</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-15T16:25:30+08:00"
-              content="2020-03-15">
-          03-15
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/03/15/%E8%BE%93%E5%85%A5%E6%95%B0%E6%8C%89%E5%8E%9F%E6%9C%89%E6%8E%92%E5%BA%8F%E6%96%B9%E6%B3%95%E6%8E%92%E5%BA%8F/" itemprop="url">
-            <span itemprop="name">输入数按原有排序方法排序</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-15T16:15:28+08:00"
-              content="2020-03-15">
-          03-15
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/03/15/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3/" itemprop="url">
-            <span itemprop="name">hexo博客搭建问题与解决</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
+<p>针对调用父类里的东西，引入super关键字</p>
+</li>
+</ul>
+<h3 id="二、super关键字"><a href="#二、super关键字" class="headerlink" title="二、super关键字"></a>二、super关键字</h3><p>super代表父类存储空间的标识，也就是父类的引用操作父类的成员</p>
+<h3 id="三、this与super"><a href="#三、this与super" class="headerlink" title="三、this与super"></a>三、this与super</h3><ol>
+<li>调用成员变量</li>
+</ol>
+<blockquote>
+<p>this.成员变量   调用本类的成员变量</p>
+<p>super.成员变量  调用父类的成员变量</p>
+</blockquote>
+<ol start="2">
+<li>调用构造方法</li>
+</ol>
+<blockquote>
+<p>this(…)   调用本类的构造方法</p>
+<p>super(…)   调用父类的构造方法</p>
+</blockquote>
+<p><strong>因为继承只能继承父类的成员变量和成员方法，不能继承父类的构造方法，这里就用super来调用父类的构造方法</strong></p>
+<ol start="3">
+<li>调用成员方法</li>
+</ol>
+<blockquote>
+<p>this.成员方法  调用本类的成员方法</p>
+<p>super.成员方法  调用父类的成员方法</p>
+</blockquote>
 
     </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Java/" rel="tag"># Java</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/03/16/%E7%BB%A7%E6%89%BF%E4%B8%AD%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E7%9A%84%E5%85%B3%E7%B3%BB/" rel="prev" title="继承中成员变量的关系">
+      <i class="fa fa-chevron-left"></i> 继承中成员变量的关系
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/03/17/%E7%BB%A7%E6%89%BF%E4%B8%AD%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E7%9A%84%E5%85%B3%E7%B3%BB/" rel="next" title="继承中构造方法的关系">
+      继承中构造方法的关系 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
   </div>
-  
-  
-  
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
-
 
 
           </div>
@@ -425,6 +328,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、this关键字"><span class="nav-number">1.</span> <span class="nav-text">一、this关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、super关键字"><span class="nav-number">2.</span> <span class="nav-text">二、super关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、this与super"><span class="nav-number">3.</span> <span class="nav-text">三、this与super</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
