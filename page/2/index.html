@@ -154,6 +154,316 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/Mingshan13/2020/03/16/%E7%BB%A7%E6%89%BF%E4%B8%AD%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E7%9A%84%E5%85%B3%E7%B3%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Digimon.Adventure.full.1752631.jpg">
+      <meta itemprop="name" content="Ming Shan">
+      <meta itemprop="description" content="我要看这样破铜烂铁的自己可以走到哪里">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="光会找到他">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/16/%E7%BB%A7%E6%89%BF%E4%B8%AD%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E7%9A%84%E5%85%B3%E7%B3%BB/" class="post-title-link" itemprop="url">继承中成员变量的关系</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-16 22:47:28" itemprop="dateCreated datePublished" datetime="2020-03-16T22:47:28+08:00">2020-03-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-03-17 19:46:14" itemprop="dateModified" datetime="2020-03-17T19:46:14+08:00">2020-03-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index">
+                    <span itemprop="name">入门学习</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>类的组成：</p>
+<ul>
+<li>成员变量</li>
+<li>成员方法</li>
+<li>构造方法</li>
+</ul>
+<h3 id="继承中成员变量的关系"><a href="#继承中成员变量的关系" class="headerlink" title="继承中成员变量的关系"></a>继承中成员变量的关系</h3><ol>
+<li><p>子类里的成员变量名和父类里的成员变量名不一样</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">int</span> num = <span class="number">10</span>;<span class="comment">//看这里</span></span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"father"</span>+num);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Son</span> <span class="keyword">extends</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">int</span> num2 = <span class="number">20</span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(num);<span class="comment">//看这里</span></span><br><span class="line">		System.out.println(num2);</span><br><span class="line">  </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>哪怕子类里没有父类的成员变量，也可以访问父类的成员变量</p>
+</li>
+<li><p>子类里的成员变量和父类里的成员变量一样</p>
+<p>采取就近原则，参考变量的作用范围</p>
+<blockquote>
+<p>1.在子类方法的局部范围找，找到就用</p>
+<p>在方法内部找，是因为用子类创建了对象，再用这个对象调用了方法，该方法已经被创建，可以在这个范围内找</p>
+<p>2.在子类的成员位置找，找到就使用</p>
+<p>方法内找不到，就跳出来找</p>
+<p><strong>这里特别注意</strong></p>
+<p><strong>方法只有被调用才执行！</strong>如果子类里还有其他方法里定义了被查找的变量，但是这个方法没有被调用即还没有出现，不能进到里面去找。如果这个时候子类没有这个成员变量，就得到父类里面去找</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">    &gt;<span class="class"><span class="keyword">class</span> <span class="title">Son</span> <span class="keyword">extends</span> <span class="title">Father</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">int</span> num=<span class="number">30</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">int</span> num2 = <span class="number">20</span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ee</span><span class="params">()</span></span>&#123;<span class="comment">//没调用这个就不能进去找</span></span><br><span class="line">	<span class="keyword">int</span> num = <span class="number">40</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">	System.out.println(num);</span><br><span class="line">	System.out.println(num2);</span><br><span class="line">&#125;</span><br><span class="line">    &gt;&#125; </span><br></pre></td></tr></table></figure>
+
+
+
+<p>3.在父类的成员范围找，有就使用</p>
+<p>不能进入父类的成员方法里找，理由同上</p>
+<p>4.还找不到就报错</p>
+<p>不管是不是哪个成员方法里有</p>
+</blockquote>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/Mingshan13/2020/03/15/main%E6%96%B9%E6%B3%95%E7%9A%84%E6%A0%BC%E5%BC%8F%E8%A7%A3%E9%87%8A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Digimon.Adventure.full.1752631.jpg">
+      <meta itemprop="name" content="Ming Shan">
+      <meta itemprop="description" content="我要看这样破铜烂铁的自己可以走到哪里">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="光会找到他">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/15/main%E6%96%B9%E6%B3%95%E7%9A%84%E6%A0%BC%E5%BC%8F%E8%A7%A3%E9%87%8A/" class="post-title-link" itemprop="url">main方法的格式解释</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-03-15 18:59:28 / 修改时间：19:04:33" itemprop="dateCreated datePublished" datetime="2020-03-15T18:59:28+08:00">2020-03-15</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index">
+                    <span itemprop="name">入门学习</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>public static void main(String []args){ }</p>
+<p>public: 公共的，访问权限是最大的，因为main被jvm（虚拟机）调用，所以权限要是最大的</p>
+<p>static: 静态的，不需要创建对象，方便jvm直接通过类名调用</p>
+<p>void: 方法的返回值是返回给调用者，main的调用者是jvm，给jvm返回值没有意义</p>
+<p>main: 一个常见的方法入口，几乎所有语言都是以main作为入口</p>
+<p>String[]args: 一个空字符串数组，早期用来接收键盘数据，后来有了scanner就不怎么用了，但是有固定的输入格式</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/Mingshan13/2020/03/15/%E8%BE%93%E5%85%A5%E6%95%B0%E6%8C%89%E5%8E%9F%E6%9C%89%E6%8E%92%E5%BA%8F%E6%96%B9%E6%B3%95%E6%8E%92%E5%BA%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Digimon.Adventure.full.1752631.jpg">
+      <meta itemprop="name" content="Ming Shan">
+      <meta itemprop="description" content="我要看这样破铜烂铁的自己可以走到哪里">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="光会找到他">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/15/%E8%BE%93%E5%85%A5%E6%95%B0%E6%8C%89%E5%8E%9F%E6%9C%89%E6%8E%92%E5%BA%8F%E6%96%B9%E6%B3%95%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">输入数按原有排序方法排序</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-03-15 16:25:30 / 修改时间：16:26:27" itemprop="dateCreated datePublished" datetime="2020-03-15T16:25:30+08:00">2020-03-15</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> it;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ttt</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">		<span class="comment">//创建对象</span></span><br><span class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">	</span><br><span class="line">		<span class="keyword">int</span> []array1 = &#123;<span class="number">11</span>,<span class="number">22</span>,<span class="number">33</span>,<span class="number">44</span>,<span class="number">55</span>,<span class="number">66</span>&#125;;</span><br><span class="line">		<span class="keyword">int</span> index = array1.length;</span><br><span class="line">		<span class="comment">//输入一个数</span></span><br><span class="line">		System.out.println(<span class="string">"请输入一个数，即将按规则与原有数组一起排序"</span>);</span><br><span class="line">		<span class="keyword">int</span> n = sc.nextInt();		</span><br><span class="line">		<span class="comment">//复制原数组</span></span><br><span class="line">		<span class="keyword">int</span>[] array2 = <span class="keyword">new</span> <span class="keyword">int</span>[array1.length + <span class="number">1</span>];</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; array1.length ; i++)&#123;</span><br><span class="line">			array2[i] = array1[i];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//比较大小</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; array2.length; j++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (n &lt; array2[j]) &#123;</span><br><span class="line">				index = j;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> x = array2.length - <span class="number">1</span>; x &gt; index; x--) &#123;</span><br><span class="line">			array2[x] = array2[x - <span class="number">1</span>];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 把要插入的元素的值赋值给index.</span></span><br><span class="line">		array2[index] = n;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//输出排序后的数组</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j:array2)&#123;</span><br><span class="line">			System.out.println(j);</span><br><span class="line">		&#125;			</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/Mingshan13/2020/03/15/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Digimon.Adventure.full.1752631.jpg">
+      <meta itemprop="name" content="Ming Shan">
+      <meta itemprop="description" content="我要看这样破铜烂铁的自己可以走到哪里">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="光会找到他">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/15/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3/" class="post-title-link" itemprop="url">hexo博客搭建问题与解决</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-15 16:15:28" itemprop="dateCreated datePublished" datetime="2020-03-15T16:15:28+08:00">2020-03-15</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://github.com/Mingshan13/2020/03/15/final%E5%85%B3%E9%94%AE%E5%AD%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1039,20 +1349,20 @@ public String(String original)：把字符串常量值转成字符串
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
